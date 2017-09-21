@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFrameworks>netstandard1.4;net45</TargetFrameworks>
+    <Authors>James Manning, Max Cheetham and Eamon Nerbonne</Authors>
+    <Description>
+      Simple wrapper around System.Diagnostics.Process to expose it as a System.Threading.Tasks.Task&lt;ProcessResults&gt;
+
+      Includes support for cancellation, timeout (via cancellation), and exposes the standard output, standard error, exit code, and run time of the process.
+    </Description>
+    <Version>1.2.0</Version>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseUrl>http://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/jamesmanning/RunProcessAsTask/</PackageProjectUrl>
+    <PackageReleaseNotes>Added support for .net standard 1.4</PackageReleaseNotes>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.4'">
+    <PackageReference Include="System.Diagnostics.Process" Version="4.3.0" />
+  </ItemGroup>
+</Project>
